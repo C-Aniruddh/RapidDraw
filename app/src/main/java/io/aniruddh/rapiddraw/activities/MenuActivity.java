@@ -99,7 +99,6 @@ public class MenuActivity extends AppCompatActivity {
         exitGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
                 System.exit(0);
             }
         });
