@@ -1,0 +1,34 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:summary="Know More"
+        android:title="About Rapid Draw">
+        <intent
+            android:targetClass="io.aniruddh.rapiddraw.activities.AboutRapidDrawActivity"
+            android:targetPackage="io.aniruddh.rapiddraw" />
+    </Preference>
+
+    <Preference
+        android:summary="Sharing the Open Source Love"
+        android:title="Fork on GitHub">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/C-Aniruddh/RapidDraw" />
+    </Preference>
+
+    <Preference
+        android:summary="On the Google Play Store"
+        android:title="Rate the app">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://play.google.com/store/apps/details?id=io.aniruddh.rapiddraw" />
+    </Preference>
+
+    <Preference
+        android:summary="Follow developer (GitHub)"
+        android:title="Developed by Aniruddh Chandratre">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/C-Aniruddh" />
+    </Preference>
+</PreferenceScreen>
