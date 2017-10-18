@@ -13,7 +13,7 @@ Building this is pretty easy. Simply import the files in Android Studio and you 
 
 Though there are somethings you have to do yourself : 
 
-* Train the dataset : The retrained_graph.pb and retrained_labels.txt have not been provided in this source. So you'll have to train the neural network yourself to get these files out. Refer to [processing](https://github.com/C-Aniruddh/RapidDraw/processing) for details.
+* Train the dataset : The retrained_graph.pb and retrained_labels.txt have not been provided in this source. So you'll have to train the neural network yourself to get these files out. Refer to [processing](https://github.com/C-Aniruddh/RapidDraw/tree/in-dev/processing) for details.
 
 
 ## Contributing
