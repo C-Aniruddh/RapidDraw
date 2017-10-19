@@ -83,6 +83,7 @@ public class BeginGame extends AppCompatActivity {
     public void onBackPressed() {
         Intent mainMenu = new Intent(BeginGame.this, MenuActivity.class);
         startActivity(mainMenu);
+        finish();
     }
 
     @Override
