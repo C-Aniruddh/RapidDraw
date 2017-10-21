@@ -179,8 +179,6 @@ public class InGameActivity extends AppCompatActivity implements TextToSpeech.On
             public void onClick(View v) {
                 final FreeDrawView sigView = mSignatureView;
                 sigView.clearDrawAndHistory();
-                TextView displayText = (TextView) findViewById(R.id.predictionStringView);
-                displayText.setText(drawText);
             }
         });
 
