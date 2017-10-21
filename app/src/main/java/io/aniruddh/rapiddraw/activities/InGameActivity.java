@@ -1,20 +1,17 @@
 package io.aniruddh.rapiddraw.activities;
 
-import android.app.UiAutomation;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +27,6 @@ import java.util.Random;
 
 import io.aniruddh.rapiddraw.R;
 import io.aniruddh.rapiddraw.classifier.ImageClassifier;
-import io.aniruddh.rapiddraw.helpers.GameHelper;
 import io.aniruddh.rapiddraw.misc.Vars;
 import io.aniruddh.rapiddraw.models.Recognition;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
@@ -179,6 +175,8 @@ public class InGameActivity extends AppCompatActivity implements TextToSpeech.On
             public void onClick(View v) {
                 final FreeDrawView sigView = mSignatureView;
                 sigView.clearDrawAndHistory();
+                TextView displayText = (TextView) findViewById(R.id.predictionStringView);
+                displayText.setText(drawText);
             }
         });
 
