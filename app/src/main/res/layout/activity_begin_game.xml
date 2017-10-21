@@ -9,6 +9,7 @@
     tools:context="io.aniruddh.rapiddraw.activities.BeginGame">
 
     <LinearLayout
+        android:id="@+id/beginActivityLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
