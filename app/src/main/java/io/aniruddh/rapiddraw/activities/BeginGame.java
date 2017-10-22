@@ -2,13 +2,11 @@ package io.aniruddh.rapiddraw.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -36,7 +34,13 @@ public class BeginGame extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_IMMERSIVE);
 
         setContentView(R.layout.activity_begin_game);
-
+        LinearLayout linearLayout = findViewById(R.id.beginActivityLinearLayout);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoInGameActivity();
+            }
+        });
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         gh = new GameHelper(BeginGame.this);
 
@@ -58,12 +62,16 @@ public class BeginGame extends AppCompatActivity {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gh.incrementPlayNumber();
-                Intent startg = new Intent(BeginGame.this, InGameActivity.class);
-                startg.putExtra("givenLabel", gh.getGivenLabel());
-                startActivity(startg);
+                gotoInGameActivity();
             }
         });
+    }
+
+    private void gotoInGameActivity() {
+        gh.incrementPlayNumber();
+        Intent startg = new Intent(BeginGame.this, InGameActivity.class);
+        startg.putExtra("givenLabel", gh.getGivenLabel());
+        startActivity(startg);
     }
 
     @Override
@@ -71,19 +79,13 @@ public class BeginGame extends AppCompatActivity {
         super.onRestart();
         Intent restart = new Intent(BeginGame.this, BeginGame.class);
         startActivity(restart);
+        finish();
     }
 
     private String setNewLabel() {
         String random_label = gh.getRandomLabel();
         String set = "Draw \n" + random_label + "\n in under 25 seconds";
         return set;
-    }
-
-    @Override
-    public void onBackPressed() {
-        Intent mainMenu = new Intent(BeginGame.this, MenuActivity.class);
-        startActivity(mainMenu);
-        finish();
     }
 
     @Override
